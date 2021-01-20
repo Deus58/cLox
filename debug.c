@@ -2,12 +2,12 @@
 
 #include "debug.h"
 
-void disassembleChunk(Chunk* chunk, const char* name){
-    printf("== %s ==\n", name);
+void disassembleChunk(Chunk* chunk, const char* name) {
+  printf("== %s ==\n", name);
 
-    for (int offset = 0; offset < chunk->count;){
-        offset = disassembleInstruction(chunk, offset);
-    }
+  for (int offset = 0; offset < chunk->count;) {
+    offset = disassembleInstruction(chunk, offset);
+  }
 }
 
 static int simpleInstruction(const char* name, int offset){
